@@ -9,6 +9,7 @@ const form = document.querySelector("form")
 const heroSection = document.querySelector("#heroSection") as HTMLBodyElement
 const popularMovies = document.querySelector("#popularMovies") as HTMLBodyElement
 const topRatedMovies = document.querySelector("#topRatedMovies") as HTMLBodyElement
+const logoName = document.querySelector("#logoName")
 
 // DIALOG 
 
@@ -42,6 +43,7 @@ hamburgerIcon?.addEventListener("click", () => {
 
 searchIcon?.addEventListener("click", () => {
     userInput?.classList.toggle("max-lg:hidden")
+    logoName?.classList.toggle("hidden")
 })
 
 const showApi = async (searchItem: string) => {
@@ -125,7 +127,7 @@ const renderTopRatedMovies = async () => {
 
     res.forEach((item: MovieItem) => {
         topRatedMovies.innerHTML += `
-        <div class="relative my-5 w-44 md:w-46">
+        <div class="relative my-5 w-[9rem] md:w-46">
             <div>
                 <div class="absolute top-2 left-2 flex items-center gap-x-2 border bg-white/80 py-0.5 px-1 text-sm rounded z-10 text-black">
                     <i class="fa-solid fa-star"></i>
@@ -146,7 +148,7 @@ const renderPopularMovie = async () => {
 
     res.forEach((item: MovieItem) => {
         popularMovies.innerHTML += `
-        <div class="relative my-5 w-44 md:w-46">
+        <div class="relative my-5 w-[9rem] md:w-46">
             <div>
                 <div class="absolute top-2 left-2 flex items-center gap-x-2 border bg-white/80 py-0.5 px-1 text-sm rounded z-10 text-black">
                     <i class="fa-solid fa-star"></i>
