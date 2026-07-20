@@ -95,7 +95,7 @@ const renderTopRatedMovies = async () => {
     topRatedMovies.innerHTML = "";
     res.forEach((item) => {
         topRatedMovies.innerHTML += `
-        <div class="relative my-5 w-46">
+        <div class="relative my-5 w-44 md:w-46">
             <div>
                 <div class="absolute top-2 left-2 flex items-center gap-x-2 border bg-white/80 py-0.5 px-1 text-sm rounded z-10 text-black">
                     <i class="fa-solid fa-star"></i>
@@ -114,7 +114,7 @@ const renderPopularMovie = async () => {
     popularMovies.innerHTML = "";
     res.forEach((item) => {
         popularMovies.innerHTML += `
-        <div class="relative my-5 w-46">
+        <div class="relative my-5 w-44 md:w-46">
             <div>
                 <div class="absolute top-2 left-2 flex items-center gap-x-2 border bg-white/80 py-0.5 px-1 text-sm rounded z-10 text-black">
                     <i class="fa-solid fa-star"></i>
