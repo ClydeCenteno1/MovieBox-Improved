@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body class="bg-slate-900 text-slate-100">
+
+    <nav class="border-b border-slate-800 bg-slate-900/95 backdrop-blur ">
+        <div class="flex items-center justify-between m-5">
+            <div class="lg:hidden">
+                <i class="fa-solid fa-bars text-xl duration-300 text-slate-200" id="hamburgerIcon"></i>
+            </div>
+
+            <div class="flex items-center gap-x-2" id="logo">
+                <i class="fa-solid fa-clapperboard text-2xl text-amber-500"></i>
+                <h2 class="font-semibold text-xl tracking-wide">MOVIE BOX</h2>
+            </div>
+
+            <div class="max-lg:hidden">
+                <ul class="flex gap-x-7 text-sm text-slate-300">
+                    <li><a href="#" class="hover:text-amber-400 transition">Home</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Movies</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Popular</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Top Rated</a></li>
+                    <li><a href="#" class="hover:text-amber-400 transition">Upcoming</a></li>
+                </ul>
+            </div>
+            <div>
+                <form action="#"
+                    class="flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800 px-3 py-2">
+                    <input type="text" id="userInput"
+                        class="outline-none max-lg:hidden bg-transparent text-sm text-slate-100 placeholder:text-slate-400"
+                        placeholder="Search Movies..." autocomplete="off">
+
+                    <i type="submit" class="fa-solid fa-magnifying-glass text-slate-400 cursor-pointer"
+                        id="searchIcon"></i>
+                </form>
+            </div>
+        </div>
+
+        <div class="lg:hidden">
+            <ul class="flex flex-col gap-y-3 max-h-0 overflow-hidden duration-300 px-5 pb-0 text-slate-300"
+                id="mobileNav">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Top Rated</a></li>
+                <li><a href="#">Upcoming</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section
+        class="min-h-[40rem] bg-[radial-gradient(circle_at_top_left,_rgba(245,158,11,0.2),_transparent_40%),linear-gradient(135deg,_#0f172a_0%,_#111827_100%)] flex items-center max-xl:px-2"
+        id="heroSection">
+    </section>
+
+    <section class="container mx-auto mt-10 max-xl:px-2">
+        <div class="flex justify-between font-semibold text-lg">
+            <h4>Popular Movies</h4>
+            <a href="#">View all ></a>
+        </div>
+    </section>
+    <div id="popularMovies" class="container mx-auto flex flex-wrap gap-x-2 justify-center"></div>
+
+    <section class="container mx-auto mt-10 max-xl:px-2">
+        <div class="flex justify-between font-semibold text-lg ">
+            <h4>Top Rated Movies</h4>
+            <a href="#">View all ></a>
+        </div>
+    </section>
+    <div id="topRatedMovies" class="container mx-auto flex flex-wrap gap-x-2 justify-center"></div>
+
+    <dialog id="dialog" class="rounded-lg bg-slate-900 text-slate-100 mt-5 shadow-2xl my-auto">
+        <div>
+            <h2 class="text-center font-semibold text-lg mt-5">Your Search Results</h2>
+            <div id="searchResults" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-x-5 p-4 overflow-hidden"></div>
+            <button id="closeBtn" class="w-full text-end p-5 outline-none">Close</button>
+        </div>
+
+    </dialog>
+
+
+
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>
